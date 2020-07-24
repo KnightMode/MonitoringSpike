@@ -15,3 +15,9 @@ promlogs:
 
 graflogs:
 	docker logs -f grafana
+
+rmimages:
+	docker rmi prometheus blackbox -f
+
+rmcontainers:
+	docker rm prometheus blackbox -f
