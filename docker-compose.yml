@@ -3,6 +3,7 @@ services:
   prometheus:
     build: .
     restart: always
+    image: prometheus
     container_name: prometheus
     depends_on:
       - blackbox
@@ -13,6 +14,7 @@ services:
   blackbox:
     build: ./blackbox/
     restart: always
+    image: blackbox
     container_name: blackbox
     ports:
       - 9115:9115
