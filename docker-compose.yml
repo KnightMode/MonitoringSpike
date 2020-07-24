@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+  prometheus:
+    build: .
+    restart: always
+    container_name: prometheus
+    depends_on:
+      - blackbox
+    ports:
+      - 9090:9090
+    networks:
+      - local
+  blackbox:
+    build: ./blackbox/
+    restart: always
+    container_name: blackbox
+    ports:
+      - 9115:9115
+    networks:
+      - local
+  grafana:
+    image: grafana/grafana
+    restart: always
+    container_name: grafana
+    ports:
+      - 3000:3000
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge
+  

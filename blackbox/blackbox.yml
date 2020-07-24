@@ -1,0 +1,9 @@
+modules:
+    tcp_connect:
+      prober: tcp
+      timeout: 5s
+    tcp_connect_tls:
+      prober: tcp
+      tcp:
+        tls: true
+        preferred_ip_protocol: ip6
