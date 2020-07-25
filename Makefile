@@ -21,3 +21,6 @@ rmimages:
 
 rmcontainers:
 	docker rm prometheus blackbox -f
+
+rmall:
+	make rmimages && make rmcontainers
