@@ -23,4 +23,4 @@ rmcontainers:
 	docker rm prometheus blackbox -f
 
 rmall:
-	make rmimages && make rmcontainers
+	make rmimages && make rmcontainers && make stop
